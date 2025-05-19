@@ -1,7 +1,6 @@
-/* eslint-disable react/no-array-index-key */
-
-import * as Style from './styles';
+import { CSSProperties, ReactNode } from 'react';
 import { theme } from '../../styles/theme';
+import * as Style from './styles';
 import { ITableBody, ITableHeader } from './types';
 
 export const Table = ({ colsHeader, children }: ITableHeader) => (
@@ -12,8 +11,8 @@ export const Table = ({ colsHeader, children }: ITableHeader) => (
           {colsHeader.map((col) => (
             <Style.TableColHeader
               key={col.label}
-              $cssProps={col.cssProps}
-              $cssOnMedia={col.cssOnMedia}
+              $cssProps={col.cssProps ?? ({} as CSSProperties)}
+              $cssOnMedia={col.cssOnMedia ?? ({} as CSSProperties)}
             >
               {col.label}
             </Style.TableColHeader>
@@ -26,16 +25,15 @@ export const Table = ({ colsHeader, children }: ITableHeader) => (
 );
 
 export const TableContent = ({ colsBody, onClick }: ITableBody) => (
-  <Style.TableRow
-    $bgColor={theme.color.dark25}
-    $hasOnClick={!!onClick}
-    onClick={() => {
-      if (onClick) onClick();
-    }}
-  >
-    {colsBody.map((col, i: number) => (
-      <Style.TableColBody key={col.cell + i} cssOnMedia={col.cssOnMedia} cssProps={col.cssProps}>
-        {col.cell}
+  <Style.TableRow $bgColor={theme.color.dark25} $hasOnClick={!!onClick} onClick={() => onClick?.()}>
+    {colsBody.map((col, i) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <Style.TableColBody
+        key={`${i}-${String(col.cell ?? '')}`}
+        $cssProps={col.cssProps ?? ({} as CSSProperties)}
+        $cssOnMedia={col.cssOnMedia ?? ({} as CSSProperties)}
+      >
+        {col.cell as ReactNode}
       </Style.TableColBody>
     ))}
   </Style.TableRow>

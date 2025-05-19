@@ -62,7 +62,7 @@ export const Wallet = () => {
 
     await Api.get(`/wallet`)
       .then((res) => {
-        const stocks = res.data.filter((element: any) => element.userId === user?.id);
+        const stocks = res.data.filter((element: IStocksWalletList) => element.userId === user?.id);
         setStocksWalletList(stocks);
 
         if (stocks.length) {

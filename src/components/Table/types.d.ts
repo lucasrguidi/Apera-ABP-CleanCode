@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode } from 'react';
 import { CSSProperties } from 'styled-components';
 
 export interface ITableHeader {
@@ -12,7 +13,7 @@ export interface ITableHeader {
 
 export interface ITableBody {
   colsBody: {
-    cell: any;
+    cell: ReactNode;
     cssProps?: CSSProperties;
     cssOnMedia?: CSSProperties;
   }[];

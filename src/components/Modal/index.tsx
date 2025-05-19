@@ -7,13 +7,15 @@ import { icons } from '../../assets/icons';
 import { IModal } from './types';
 import { theme } from '../../styles/theme';
 import { IconButton } from '../Buttons/IconButton';
+import { MouseEvent } from 'react';
 
 export const Modal = ({ children, setModal, title }: IModal) => (
   <Style.Background
     id="background"
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onMouseDown={(evt: any) => {
-      if (evt.target.id === 'background') setModal(false);
+    onMouseDown={(evt: MouseEvent<HTMLDivElement>) => {
+      if (evt.target === evt.currentTarget) {
+        setModal(false);
+      }
     }}
   >
     <Style.Body>

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import styled, { css } from 'styled-components';
+import { CSSProperties } from 'react';
 import { theme } from '../../styles/theme';
 
 export const Background = styled.div`
@@ -23,7 +24,11 @@ export const TableRowHead = styled.tr<{ $bgColor?: string }>`
 `;
 
 export const TableRow = styled.tr<{ $bgColor?: string; $hasOnClick: boolean }>`
-  ${({ $bgColor }) => $bgColor && `background-color: ${$bgColor};`};
+  ${({ $bgColor }) =>
+    $bgColor &&
+    css`
+      background-color: ${$bgColor};
+    `}
 
   ${({ $hasOnClick }) =>
     $hasOnClick &&
@@ -34,23 +39,37 @@ export const TableRow = styled.tr<{ $bgColor?: string; $hasOnClick: boolean }>`
     `}
 `;
 
-export const TableColHeader = styled.th<{ $cssProps: any; $cssOnMedia: any }>`
+export const TableColHeader = styled.th<{
+  $cssProps?: CSSProperties;
+  $cssOnMedia?: CSSProperties;
+}>`
   color: ${theme.color.gray4};
   text-align: center;
   white-space: nowrap;
-  /* padding-inline: ${theme.size.sm}; */
 
-  ${({ $cssProps }) => $cssProps}
+  ${({ $cssProps }) =>
+    $cssProps &&
+    css`
+      ${Object.entries($cssProps)
+        .map(([key, value]) => `${key}: ${value};`)
+        .join('\n')}
+    `}
 
-  @media (max-width:900px) {
-    ${({ $cssOnMedia }) => $cssOnMedia}
+  @media (max-width: 900px) {
+    ${({ $cssOnMedia }) =>
+      $cssOnMedia &&
+      css`
+        ${Object.entries($cssOnMedia)
+          .map(([key, value]) => `${key}: ${value};`)
+          .join('\n')}
+      `}
   }
 `;
 
 export const TableColBody = styled.td<{
   textAlign?: string;
-  cssProps: any;
-  cssOnMedia: any;
+  $cssProps?: CSSProperties;
+  $cssOnMedia?: CSSProperties;
 }>`
   height: ${theme.size.xxlg};
   text-align: center;
@@ -58,23 +77,35 @@ export const TableColBody = styled.td<{
   white-space: nowrap;
 
   &:first-of-type {
-    border-radius: ${theme.size.xxsm} 0px 0px ${theme.size.xxsm};
+    border-radius: ${theme.size.xxsm} 0 0 ${theme.size.xxsm};
     padding-left: ${theme.size.sm};
   }
 
   &:last-of-type {
-    border-radius: 0px ${theme.size.xxsm} ${theme.size.xxsm} 0px;
-    min-width: 0px;
+    border-radius: 0 ${theme.size.xxsm} ${theme.size.xxsm} 0;
+    min-width: 0;
     padding-right: ${theme.size.sm};
   }
 
-  ${({ cssProps }) => cssProps}
+  ${({ $cssProps }) =>
+    $cssProps &&
+    css`
+      ${Object.entries($cssProps)
+        .map(([key, value]) => `${key}: ${value};`)
+        .join('\n')}
+    `}
 
   @media (max-width: 900px) {
     min-width: 150px;
-    ${({ cssOnMedia }) => cssOnMedia}
+    ${({ $cssOnMedia }) =>
+      $cssOnMedia &&
+      css`
+        ${Object.entries($cssOnMedia)
+          .map(([key, value]) => `${key}: ${value};`)
+          .join('\n')}
+      `}
     :first-of-type {
-      min-width: 0px;
+      min-width: 0;
     }
   }
 `;
