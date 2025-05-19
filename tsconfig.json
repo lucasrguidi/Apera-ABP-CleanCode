@@ -12,7 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "allowUnreachableCode": false,
 
-
     /* Bundler mode */
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -26,13 +25,15 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "importsNotUsedAsValues": "remove",
-
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
