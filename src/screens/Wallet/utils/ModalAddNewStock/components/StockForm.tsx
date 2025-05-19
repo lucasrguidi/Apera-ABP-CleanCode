@@ -1,13 +1,14 @@
 import { Form, Formik, FormikHelpers } from 'formik';
 import * as yup from 'yup';
-import * as S from '../styles';
+import { Button } from '../../../../../components/Buttons/Button';
+import { FormikInput } from '../../../../../components/Form/FormikInput';
+import ReactAsyncSelect from '../../../../../components/ReactAsyncSelect';
+import { useMask } from '../../../../../hooks/useMask';
+import { theme } from '../../../../../styles/theme';
+import { applyMask, dateToISOString, unMask } from '../../../../../utils/functions';
 import { IStocksWalletList } from '../../../types';
 import { useModalStock } from '../hooks/useModalStock';
-import { applyMask, dateToISOString, unMask } from '../../../../../utils/functions';
-import ReactAsyncSelect from '../../../../../components/ReactAsyncSelect';
-import { FormikInput } from '../../../../../components/Form/FormikInput';
-import { Button } from '../../../../../components/Buttons/Button';
-import { theme } from '../../../../../styles/theme';
+import * as S from '../styles';
 
 const schema = yup.object({
   stock: yup.string().required('Selecione uma ação.'),
@@ -28,6 +29,8 @@ export const StockForm = ({ type, existingList, onSuccess }: Props) => {
     existingList,
     onSuccess,
   );
+
+  const { formatBRL, formatNUM } = useMask();
 
   const handleSubmit = async (
     data: {
@@ -74,10 +77,7 @@ export const StockForm = ({ type, existingList, onSuccess }: Props) => {
             error={touched.stock && errors.stock ? errors.stock : undefined}
             onChange={(evt) => {
               const found = stocksList.find((s) => s.stock === evt.value);
-              setFieldValue(
-                'value',
-                applyMask({ mask: 'BRL', value: String(found?.close || 0) }).value,
-              );
+              setFieldValue('value', formatBRL(found?.close || 0));
               setFieldValue('stock', evt.value);
             }}
           />
@@ -94,9 +94,7 @@ export const StockForm = ({ type, existingList, onSuccess }: Props) => {
               label="Quantidade"
               maxLength={5}
               error={touched.amount && errors.amount ? errors.amount : undefined}
-              onChange={(e) =>
-                setFieldValue('amount', applyMask({ mask: 'NUM', value: e.target.value }).value)
-              }
+              onChange={(e) => setFieldValue('amount', formatNUM(e.target.value))}
             />
           </S.InputsWrapper>
 
@@ -106,18 +104,14 @@ export const StockForm = ({ type, existingList, onSuccess }: Props) => {
               label="Preço R$"
               maxLength={15}
               error={touched.value && errors.value ? errors.value : undefined}
-              onChange={(e) =>
-                setFieldValue('value', applyMask({ mask: 'BRL', value: e.target.value }).value)
-              }
+              onChange={(e) => setFieldValue('value', formatBRL(e.target.value))}
             />
             <FormikInput
               name="otherCosts"
               label="Outros custos"
               maxLength={15}
               error={touched.otherCosts && errors.otherCosts ? errors.otherCosts : undefined}
-              onChange={(e) =>
-                setFieldValue('otherCosts', applyMask({ mask: 'BRL', value: e.target.value }).value)
-              }
+              onChange={(e) => setFieldValue('otherCosts', formatBRL(e.target.value))}
             />
           </S.InputsWrapper>
 

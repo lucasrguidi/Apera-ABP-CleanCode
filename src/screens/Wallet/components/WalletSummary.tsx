@@ -1,5 +1,5 @@
 import { icons } from '../../../assets/icons';
-import { applyMask } from '../../../utils/functions';
+import { useMask } from '../../../hooks/useMask';
 import * as S from '../styles';
 import { IStocksWalletList } from '../types';
 
@@ -8,12 +8,10 @@ interface Props {
 }
 
 export const WalletSummary = ({ stocks }: Props) => {
+  const { formatBRL } = useMask();
   // calcula valor aplicado (preço médio × quantidade)
   const appliedNum = stocks.reduce((acc, s) => acc + s.averagePrice * s.amount, 0);
-  const applied = applyMask({
-    mask: 'BRL',
-    value: String(appliedNum * 100),
-  }).value;
+  const applied = formatBRL(appliedNum * 100);
 
   // soma de saldo (usando balance já formatado)
   const balanceSum = stocks.reduce((acc, s) => {
@@ -21,10 +19,7 @@ export const WalletSummary = ({ stocks }: Props) => {
     const numeric = Number(s.balance.replace(/[R$\s.]/g, '').replace(',', '.'));
     return acc + numeric;
   }, 0);
-  const saldo = applyMask({
-    mask: 'BRL',
-    value: String(balanceSum),
-  }).value;
+  const saldo = formatBRL(balanceSum);
 
   // variação média
   const variation = (stocks.reduce((acc, s) => acc + s.appreciation, 0) / stocks.length).toFixed(2);

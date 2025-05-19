@@ -1,15 +1,17 @@
-import { useContext, useEffect, useState, useCallback } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
-import { IStocksWalletList } from '../types';
-import { applyMask } from '../../../utils/functions';
-import { BrApi } from '../../../services/brApi';
+import { useMask } from '../../../hooks/useMask';
 import { Api } from '../../../services/api';
+import { BrApi } from '../../../services/brApi';
+import { IStocksWalletList } from '../types';
 
 export function useWallet() {
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const [stocks, setStocks] = useState<IStocksWalletList[]>([]);
+
+  const { formatBRL } = useMask();
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -30,14 +32,8 @@ export function useWallet() {
       // 3) Mapear array original para incluir price/balance/appreciation
       const updated = userStocks.map((s, idx) => {
         const e = data.results[idx];
-        const currentPrice = applyMask({
-          mask: 'BRL',
-          value: String(e.regularMarketPrice * 100),
-        }).value;
-        const balance = applyMask({
-          mask: 'BRL',
-          value: String(e.regularMarketPrice * 100 * s.amount),
-        }).value;
+        const currentPrice = formatBRL(e.regularMarketPrice * 100);
+        const balance = formatBRL(e.regularMarketPrice * 100 * s.amount);
         const appreciation = Number((100 - s.averagePrice / e.regularMarketPrice).toFixed(2));
         return { ...s, currentPrice, balance, appreciation };
       });

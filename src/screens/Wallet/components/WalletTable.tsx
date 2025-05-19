@@ -1,5 +1,5 @@
 import { Table, TableContent } from '../../../components/Table';
-import { applyMask } from '../../../utils/functions';
+import { useMask } from '../../../hooks/useMask';
 import * as S from '../styles';
 import { IStocksWalletList } from '../types';
 
@@ -7,6 +7,7 @@ interface Props {
   stocks: IStocksWalletList[];
   onRowClick: (ticker: string) => void;
 }
+const { formatBRL } = useMask();
 
 export const WalletTable = ({ stocks, onRowClick }: Props) => (
   <Table
@@ -34,7 +35,7 @@ export const WalletTable = ({ stocks, onRowClick }: Props) => (
           },
           { cell: stock.amount },
           {
-            cell: applyMask({ mask: 'BRL', value: String(stock.averagePrice) }).value,
+            cell: formatBRL(stock.averagePrice),
           },
           { cell: stock.currentPrice },
           {
