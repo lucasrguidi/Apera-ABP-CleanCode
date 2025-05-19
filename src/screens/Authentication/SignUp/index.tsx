@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { icons } from 'src/assets/icons';
+import { icons } from '@assets/icons';
 import * as yup from 'yup';
 import * as Style from './styles';
 

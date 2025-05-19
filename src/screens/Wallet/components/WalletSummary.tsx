@@ -1,5 +1,5 @@
 import { useMask } from '@hooks/useMask';
-import { icons } from 'src/assets/icons';
+import { icons } from '@assets/icons';
 import * as S from '../styles';
 import { IStocksWalletList } from '../types';
 

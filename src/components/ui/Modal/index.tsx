@@ -1,8 +1,8 @@
 // UI
+import { icons } from '@assets/icons';
 import { theme } from '@styles/theme';
 import { IconButton } from '@ui/Buttons/IconButton';
 import { MouseEvent } from 'react';
-import { icons } from 'src/assets/icons';
 import * as Style from './styles';
 // ICONS
 

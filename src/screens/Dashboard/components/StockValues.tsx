@@ -1,5 +1,5 @@
 import { formatCurrencyBRL, numericScaleIdentifier } from '@utils/functions';
-import { icons } from 'src/assets/icons';
+import { icons } from '@assets/icons';
 import * as S from '../styles';
 
 interface Props {

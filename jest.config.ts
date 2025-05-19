@@ -9,6 +9,8 @@ export default {
     '^@screens/(.*)$': '<rootDir>/src/screens/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
     '^@styles/(.*)$': '<rootDir>/src/styles/$1',
+    '^@assets/(.*)$': '<rootDir>/src/assets/$1',
+    '\\.(svg|jpg|jpeg|png|gif|webp|avif)$': '<rootDir>/__mocks__/fileMock.ts',
   },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],

@@ -6,7 +6,7 @@ import { Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { icons } from 'src/assets/icons';
+import { icons } from '@assets/icons';
 import * as yup from 'yup';
 import * as Style from './styles';
 import { IFormData, ILoginData } from './type';

@@ -1,5 +1,5 @@
+import { icons } from '@assets/icons';
 import { useNavigate } from 'react-router-dom';
-import { icons } from 'src/assets/icons';
 import { Button } from '../Buttons/Button';
 import * as Style from './styles';
 

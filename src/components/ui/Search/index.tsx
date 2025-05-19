@@ -1,7 +1,7 @@
 import { BrApi } from '@services/brApi';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { icons } from 'src/assets/icons';
+import { icons } from '@assets/icons';
 import { IconButton } from '../Buttons/IconButton';
 import ReactAsyncSelect from '../ReactAsyncSelect';
 import * as Style from './styles';
