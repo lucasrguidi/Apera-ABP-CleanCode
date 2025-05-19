@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -103,20 +103,18 @@
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,32 +127,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { theme } from '@styles/theme';</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { theme } from '@styles/theme';
 import { CSSProperties, ReactNode } from 'react';
-<span class="cstat-no" title="statement not covered" >import * as Style from './styles';</span>
+import * as Style from './styles';
 import { ITableBody, ITableHeader } from './types';
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >Table = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>{</span> colsHeader, children }: ITableHeader) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >  &lt;Style.Background&gt;</span>
+export const Table = ({ colsHeader, children }: ITableHeader) =&gt; (
+  &lt;Style.Background&gt;
     &lt;Style.TableContainer&gt;
       &lt;Style.TableHead&gt;
         &lt;Style.TableRowHead&gt;
-          {colsHeader.map(<span class="fstat-no" title="function not covered" >(c</span>ol) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;Style.TableColHeader</span>
+          {colsHeader.map((col) =&gt; (
+            &lt;Style.TableColHeader
               key={col.label}
               $cssProps={col.cssProps ?? ({} as CSSProperties)}
               $cssOnMedia={col.cssOnMedia ?? ({} as CSSProperties)}
@@ -169,12 +169,12 @@ export const <span class="cstat-no" title="statement not covered" >Table = <span
   &lt;/Style.Background&gt;
 );
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >TableContent = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>{</span> colsBody, onClick }: ITableBody) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >  &lt;Style.TableRow $bgColor={theme.color.dark25} $hasOnClick={!!onClick} onClick={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >onClick?.()}</span>&gt;</span>
-    {colsBody.map(<span class="fstat-no" title="function not covered" >(c</span>ol, i) =&gt; (
+export const TableContent = ({ colsBody, onClick }: ITableBody) =&gt; (
+  &lt;Style.TableRow $bgColor={theme.color.dark25} $hasOnClick={!!onClick} onClick={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >onClick?.()}</span>&gt;
+    {colsBody.map((col, i) =&gt; (
       // eslint-disable-next-line react/no-array-index-key
-<span class="cstat-no" title="statement not covered" >      &lt;Style.TableColBody</span>
-        key={`${i}-${String(col.cell ?? '')}`}
+      &lt;Style.TableColBody
+        key={`${i}-${String(col.cell ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>}`}
         $cssProps={col.cssProps ?? ({} as CSSProperties)}
         $cssOnMedia={col.cssOnMedia ?? ({} as CSSProperties)}
       &gt;
@@ -190,7 +190,7 @@ export const <span class="cstat-no" title="statement not covered" >TableContent 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-19T18:54:39.115Z
+                at 2025-05-19T19:31:45.637Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

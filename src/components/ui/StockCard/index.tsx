@@ -1,28 +1,25 @@
 import { formatCurrencyBRL } from '@utils/functions';
-import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import * as Style from './styles';
 
-export const StockCard = ({ stockInfos }: IStockCard) => {
+interface StockCardProps {
+  symbol: string;
+  name: string;
+  value: number;
+}
+
+export default function StockCard({ symbol, name, value }: StockCardProps) {
   const navigate = useNavigate();
+  const stockInfos = { stock: symbol, name, close: value };
+
   return (
-    <motion.div
-      key={stockInfos.stock}
-      onDoubleClick={() => navigate(`/dashboard/${stockInfos.stock}`)}
-    >
-      <Style.StockContainer>
-        <Style.LeftSide>
-          <h4>{stockInfos.stock}</h4>
-          <p className="p3">{stockInfos.name}</p>
-          <p className="p3">{formatCurrencyBRL(stockInfos.close)}</p>
-        </Style.LeftSide>
-        <Style.RightSide>
-          <img src={stockInfos.logo} alt="" />
-          <Style.VariationContainer $variation={stockInfos.change}>
-            <p className="p3">{stockInfos.change.toFixed(2)}%</p>
-          </Style.VariationContainer>
-        </Style.RightSide>
-      </Style.StockContainer>
-    </motion.div>
+    <Style.StockContainer onClick={() => navigate(`/stocks/${symbol}`)}>
+      <Style.LeftSide>
+        <h4>{stockInfos.stock}</h4>
+        <p className="p3">{stockInfos.name}</p>
+        <p className="p3">{formatCurrencyBRL(stockInfos.close)}</p>
+      </Style.LeftSide>
+      {/* resto do layout */}
+    </Style.StockContainer>
   );
-};
+}
