@@ -1,7 +1,7 @@
-import { Table, TableContent } from '../../../components/Table';
-import { useMask } from '../../../hooks/useMask';
+import { useMask } from '@hooks/useMask';
 import * as S from '../styles';
 import { IStocksWalletList } from '../types';
+import { Table, TableContent } from '@ui/Table';
 
 interface Props {
   stocks: IStocksWalletList[];

@@ -1,4 +1,4 @@
-import { theme } from '../../../../../styles/theme';
+import { theme } from '@styles/theme';
 import * as S from '../styles';
 
 interface Props {

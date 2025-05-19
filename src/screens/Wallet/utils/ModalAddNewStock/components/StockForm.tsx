@@ -1,14 +1,15 @@
 import { Form, Formik, FormikHelpers } from 'formik';
 import * as yup from 'yup';
-import { Button } from '../../../../../components/Buttons/Button';
-import { FormikInput } from '../../../../../components/Form/FormikInput';
-import ReactAsyncSelect from '../../../../../components/ReactAsyncSelect';
-import { useMask } from '../../../../../hooks/useMask';
+
 import { theme } from '../../../../../styles/theme';
 import { applyMask, dateToISOString, unMask } from '../../../../../utils/functions';
 import { IStocksWalletList } from '../../../types';
-import { useModalStock } from '../hooks/useModalStock';
 import * as S from '../styles';
+import { useMask } from '@hooks/useMask';
+import ReactAsyncSelect from '@ui/ReactAsyncSelect';
+import { FormikInput } from '@ui/Form/FormikInput';
+import { Button } from '@ui/Buttons/Button';
+import { useModalStock } from '@hooks/useModalStock';
 
 const schema = yup.object({
   stock: yup.string().required('Selecione uma ação.'),

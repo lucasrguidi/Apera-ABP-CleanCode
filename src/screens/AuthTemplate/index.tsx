@@ -1,7 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import * as Style from './styles';
 import { useEffect } from 'react';
-import { Navbar } from '../../components/Navbar';
+import { Navbar } from '@ui/Navbar';
 
 export const AuthTemplate = () => {
   const navigate = useNavigate();

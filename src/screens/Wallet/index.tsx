@@ -7,8 +7,8 @@ import { WalletActions } from './components/WalletActions';
 import { WalletEmpty } from './components/WalletEmpty';
 import { WalletSummary } from './components/WalletSummary';
 import { WalletTable } from './components/WalletTable';
-import { useWallet } from './hooks/useWallet';
 import { ModalAddNewStock } from './utils/ModalAddNewStock';
+import { useWallet } from '@hooks/useWallet';
 
 export const Wallet = () => {
   const navigate = useNavigate();

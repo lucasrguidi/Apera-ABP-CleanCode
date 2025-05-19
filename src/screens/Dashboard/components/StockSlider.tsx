@@ -1,5 +1,5 @@
-import { Slider } from '../../../components/Slider';
-import { StockCard } from '../../../components/StockCard';
+import { Slider } from '@ui/Slider';
+import { StockCard } from '@ui/StockCard';
 
 interface Props {
   list: IStocks[];

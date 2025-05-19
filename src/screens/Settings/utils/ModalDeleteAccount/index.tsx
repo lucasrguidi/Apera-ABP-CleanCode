@@ -1,13 +1,13 @@
-import { Modal } from '../../../../components/Modal';
 import { IModalDeleteAccount } from './types';
 import * as Style from './styles';
-import { Button } from '../../../../components/Buttons/Button';
-import { theme } from '../../../../styles/theme';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../../context/AuthContext';
 import { Api } from '../../../../services/api';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { Modal } from '@ui/Modal';
+import { Button } from '@ui/Buttons/Button';
+import { theme } from '@styles/theme';
 
 export const ModalDeleteAccount = ({ setModal }: IModalDeleteAccount) => {
   const navigate = useNavigate();

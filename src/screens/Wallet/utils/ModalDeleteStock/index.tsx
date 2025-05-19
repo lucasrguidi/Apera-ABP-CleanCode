@@ -1,11 +1,12 @@
-import { Modal } from '../../../../components/Modal';
-import { IModalDeleteStock } from './types';
 import * as Style from './styles';
-import { Button } from '../../../../components/Buttons/Button';
-import { theme } from '../../../../styles/theme';
+
 import { useState } from 'react';
-import { Api } from '../../../../services/api';
 import { toast } from 'react-toastify';
+import { IModalDeleteStock } from './types';
+import { Api } from '@services/api';
+import { Modal } from '@ui/Modal';
+import { Button } from '@ui/Buttons/Button';
+import { theme } from '@styles/theme';
 
 export const ModalDeleteStock = ({ setModal, stockId, callback }: IModalDeleteStock) => {
   const [onQuery, setOnQuery] = useState<boolean>(false);

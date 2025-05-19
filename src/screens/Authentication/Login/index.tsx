@@ -1,19 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Formik, Form } from 'formik';
-
-import { Button } from '../../../components/Buttons/Button';
-import { FormikInput } from '../../../components/Form/FormikInput';
-
 import * as yup from 'yup';
 import * as Style from './styles';
-
-import { theme } from '../../../styles/theme';
-import { icons } from '../../../assets/icons';
-
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { Api } from '../../../services/api';
+import { useEffect, useState } from 'react';
 import { IFormData, ILoginData } from './type';
+import { Api } from '@services/api';
+import { toast } from 'react-toastify';
+import { Form, Formik } from 'formik';
+import { icons } from 'src/assets/icons';
+import { FormikInput } from '@ui/Form/FormikInput';
+import { Button } from '@ui/Buttons/Button';
+import { theme } from '@styles/theme';
 
 export const Login = () => {
   const navigate = useNavigate();

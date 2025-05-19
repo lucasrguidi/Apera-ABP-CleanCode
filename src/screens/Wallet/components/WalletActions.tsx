@@ -1,7 +1,7 @@
-import { icons } from '../../../assets/icons';
-import { IconButton } from '../../../components/Buttons/IconButton';
-import { theme } from '../../../styles/theme';
+import { IconButton } from '@ui/Buttons/IconButton';
 import * as S from '../styles';
+import { icons } from 'src/assets/icons';
+import { theme } from '@styles/theme';
 
 interface Props {
   onAdd: () => void;

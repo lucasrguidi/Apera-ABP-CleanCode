@@ -1,7 +1,7 @@
-import { icons } from '../../../assets/icons';
-import { useMask } from '../../../hooks/useMask';
+import { useMask } from '@hooks/useMask';
 import * as S from '../styles';
 import { IStocksWalletList } from '../types';
+import { icons } from 'src/assets/icons';
 
 interface Props {
   stocks: IStocksWalletList[];

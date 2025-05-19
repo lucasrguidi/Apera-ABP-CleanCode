@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Slider } from '../../components/Slider';
-import { StockCard } from '../../components/StockCard';
+
 import { toast } from 'react-toastify';
 import * as Style from './styles';
-import { theme } from '../../styles/theme';
+
 import { ApexOptions } from 'apexcharts';
 import ReactApexChart from 'react-apexcharts';
-import { DotLoading } from '../../components/DotLoading';
-import { BrApi } from '../../services/brApi';
-import { Navbar } from '../../components/Navbar';
+import { BrApi } from '@services/brApi';
+import { theme } from '@styles/theme';
+import { Navbar } from '@ui/Navbar';
+import { DotLoading } from '@ui/DotLoading';
+import { Slider } from '@ui/Slider';
+import { StockCard } from '@ui/StockCard';
 
 export const Home = () => {
   const [loading, setLoading] = useState(true);

@@ -1,4 +1,4 @@
-import { DotLoading } from '../../../components/DotLoading';
+import { DotLoading } from '@ui/DotLoading';
 import * as S from '../styles';
 
 export const LoadingOverlay = () => (

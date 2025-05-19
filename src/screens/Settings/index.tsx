@@ -1,19 +1,18 @@
 import { useState, useContext } from 'react';
 import { Formik, Form } from 'formik';
 
-import { Button } from '../../components/Buttons/Button';
-import { FormikInput } from '../../components/Form/FormikInput';
-
 import * as Style from './styles';
 
-import { theme } from '../../styles/theme';
-import { AuthContext } from '../../context/AuthContext';
-
 import * as yup from 'yup';
-import { Api } from '../../services/api';
+
 import { toast } from 'react-toastify';
+import { AuthContext } from 'src/context/AuthContext';
 import { IFormData } from './types';
+import { Api } from '@services/api';
 import { ModalDeleteAccount } from './utils/ModalDeleteAccount';
+import { FormikInput } from '@ui/Form/FormikInput';
+import { Button } from '@ui/Buttons/Button';
+import { theme } from '@styles/theme';
 
 export const Settings = () => {
   const { user, setUser } = useContext(AuthContext);

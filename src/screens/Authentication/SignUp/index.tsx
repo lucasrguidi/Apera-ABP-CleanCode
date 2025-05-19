@@ -3,19 +3,17 @@
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
 
-import { Button } from '../../../components/Buttons/Button';
-import { FormikInput } from '../../../components/Form/FormikInput';
-
 import * as yup from 'yup';
 import * as Style from './styles';
 
-import { theme } from '../../../styles/theme';
-import { icons } from '../../../assets/icons';
-
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { Api } from '../../../services/api';
 import { IFormData } from './types';
+import { icons } from 'src/assets/icons';
+import { FormikInput } from '@ui/Form/FormikInput';
+import { Button } from '@ui/Buttons/Button';
+import { theme } from '@styles/theme';
+import { Api } from '@services/api';
 
 export const SignUp = () => {
   const navigate = useNavigate();

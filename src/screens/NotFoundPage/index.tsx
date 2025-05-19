@@ -1,4 +1,4 @@
-import { NotFound } from '../../components/NotFound';
+import { NotFound } from '@ui/NotFound';
 import * as Style from './styles';
 
 export const NotFoundPage = () => {

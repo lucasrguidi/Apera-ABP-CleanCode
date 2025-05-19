@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import { Api } from '../services/api';
 import { toast } from 'react-toastify';
-import { DotLoading } from '../components/DotLoading';
 import { IUser } from './types';
 import { LoadingContainer } from './styles';
+import { DotLoading } from '@ui/DotLoading';
 
 export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const navigate = useNavigate();

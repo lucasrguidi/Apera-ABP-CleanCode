@@ -1,10 +1,10 @@
-import { NotFound } from '../../components/NotFound';
+import { useDashboard } from '@hooks/useDashboard';
 import { LoadingOverlay } from './components/LoadingOverlay';
 import { StockChart } from './components/StockChart';
 import { StockDetails } from './components/StockDetails';
 import { StockSlider } from './components/StockSlider';
 import { StockValues } from './components/StockValues';
-import { useDashboard } from './hooks/useDashboard';
+import { NotFound } from '@ui/NotFound';
 
 export const Dashboard = () => {
   const { loading, stockData, series, stocksList, lastUpdate } = useDashboard();
