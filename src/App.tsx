@@ -1,9 +1,9 @@
 import { Slide, ToastContainer } from 'react-toastify';
+import { ThemeProvider } from 'styled-components';
+import AppRoutes from './routes';
 import GlobalCSS from './styles/globalCSS';
 import 'react-toastify/dist/ReactToastify.css';
-import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
-import AppRoutes from './routes';
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import styled, { css } from 'styled-components';
-import { CSSProperties } from 'react';
 import { theme } from '@styles/theme';
+import { CSSProperties } from 'react';
+import styled, { css } from 'styled-components';
 
 export const Background = styled.div`
   max-width: 100%;

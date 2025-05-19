@@ -1,8 +1,8 @@
 import { IStocksWalletList } from '@screens/Wallet/types';
 import { Modal } from '@ui/Modal';
 import { useState } from 'react';
-import { TransactionTypeToggle } from './components/TransactionTypeToggle';
 import { StockForm } from './components/StockForm';
+import { TransactionTypeToggle } from './components/TransactionTypeToggle';
 
 interface Props {
   setModal: (open: boolean) => void;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { components, OptionProps, SingleValueProps, NoticeProps } from 'react-select';
-import { ErrorMessage, OptionContainer, ReactSelectContainer, selectStyles } from './styles';
 import AsyncSelect from 'react-select/async';
+import { ErrorMessage, OptionContainer, ReactSelectContainer, selectStyles } from './styles';
 import { OptionsProps, Props } from './types';
 
 const ReactAsyncSelect: React.FC<Props> = ({
@@ -16,6 +16,7 @@ const ReactAsyncSelect: React.FC<Props> = ({
   error,
   name,
 }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Option = (props: OptionProps<any>) => (
     <components.Option {...props}>
       <OptionContainer>
@@ -25,6 +26,7 @@ const ReactAsyncSelect: React.FC<Props> = ({
     </components.Option>
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const SingleValue = (props: SingleValueProps<any>) => (
     <components.SingleValue {...props}>
       <OptionContainer>

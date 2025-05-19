@@ -1,19 +1,19 @@
 /* eslint-disable no-console */
 
-import { useState } from 'react';
+import { Api } from '@services/api';
+import { theme } from '@styles/theme';
+import { Button } from '@ui/Buttons/Button';
+import { FormikInput } from '@ui/Form/FormikInput';
 import { Formik, Form } from 'formik';
-
-import * as yup from 'yup';
-import * as Style from './styles';
+import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { IFormData } from './types';
 import { icons } from 'src/assets/icons';
-import { FormikInput } from '@ui/Form/FormikInput';
-import { Button } from '@ui/Buttons/Button';
-import { theme } from '@styles/theme';
-import { Api } from '@services/api';
+import * as yup from 'yup';
+import * as Style from './styles';
+
+import { IFormData } from './types';
 
 export const SignUp = () => {
   const navigate = useNavigate();

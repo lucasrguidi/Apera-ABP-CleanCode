@@ -1,5 +1,5 @@
-import { forwardRef, ForwardRefRenderFunction } from 'react';
 import { Field } from 'formik';
+import { forwardRef, ForwardRefRenderFunction } from 'react';
 import { ErrorMessage, SelectContainer } from './styles';
 import { SelectProps } from './types';
 

@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthProvider';
+import { RequireAuth } from './context/RequireAuth';
 import { Login } from './screens/Authentication/Login';
 
-import { AuthProvider } from './context/AuthProvider';
-import { Dashboard } from './screens/Dashboard';
-import { RequireAuth } from './context/RequireAuth';
-import { NotFoundPage } from './screens/NotFoundPage';
 import { SignUp } from './screens/Authentication/SignUp';
-import { Wallet } from './screens/Wallet';
-import { Home } from './screens/Home';
-import { Settings } from './screens/Settings';
 import { AuthTemplate } from './screens/AuthTemplate';
+import { Dashboard } from './screens/Dashboard';
+import { Home } from './screens/Home';
+import { NotFoundPage } from './screens/NotFoundPage';
+import { Settings } from './screens/Settings';
+import { Wallet } from './screens/Wallet';
 
 const AppRoutes = () => (
   <AuthProvider>

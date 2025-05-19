@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { icons } from 'src/assets/icons';
 import { Button } from '../Buttons/Button';
 import * as Style from './styles';
-import { icons } from 'src/assets/icons';
 
 export const NotFound = ({
   title = 'Página não encontrada',

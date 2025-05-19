@@ -1,6 +1,6 @@
+import { theme } from '@styles/theme';
 import { StylesConfig } from 'react-select';
 import styled from 'styled-components';
-import { theme } from '@styles/theme';
 
 export const selectStyles: StylesConfig = {
   control: (styles) => ({

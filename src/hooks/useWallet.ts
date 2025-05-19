@@ -1,10 +1,10 @@
 import { IStocksWalletList } from '@screens/Wallet/types';
+import { Api } from '@services/api';
+import { BrApi } from '@services/brApi';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from 'src/context/AuthContext';
 import { useMask } from './useMask';
-import { Api } from '@services/api';
-import { BrApi } from '@services/brApi';
 
 export function useWallet() {
   const { user } = useContext(AuthContext);

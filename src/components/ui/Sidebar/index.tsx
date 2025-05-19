@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import * as Style from './styles';
-import { Search } from '../Search';
 import { icons } from 'src/assets/icons';
+import { Search } from '../Search';
+import * as Style from './styles';
 
 export const Sidebar = ({ isOpen }: ISidebar) => {
   const sidebarContent: ISidebarContent[] = [

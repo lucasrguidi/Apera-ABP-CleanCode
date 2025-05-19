@@ -1,14 +1,14 @@
+import { useWallet } from '@hooks/useWallet';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as S from './styles';
 
 import { LoadingOverlay } from './components/LoadingOverlay';
 import { WalletActions } from './components/WalletActions';
 import { WalletEmpty } from './components/WalletEmpty';
 import { WalletSummary } from './components/WalletSummary';
 import { WalletTable } from './components/WalletTable';
+import * as S from './styles';
 import { ModalAddNewStock } from './utils/ModalAddNewStock';
-import { useWallet } from '@hooks/useWallet';
 
 export const Wallet = () => {
   const navigate = useNavigate();

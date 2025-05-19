@@ -1,6 +1,6 @@
 import { formatCurrencyBRL, numericScaleIdentifier } from '@utils/functions';
-import * as S from '../styles';
 import { icons } from 'src/assets/icons';
+import * as S from '../styles';
 
 interface Props {
   data: IStockData;

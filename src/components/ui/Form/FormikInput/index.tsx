@@ -1,9 +1,9 @@
-import { forwardRef, ForwardRefRenderFunction } from 'react';
+import { theme } from '@styles/theme';
 import { Field } from 'formik';
+import { forwardRef, ForwardRefRenderFunction } from 'react';
 
 import { ErrorMessage, InputContainer } from './styles';
 import { IInput } from './types';
-import { theme } from '@styles/theme';
 
 const FormikInputBase: ForwardRefRenderFunction<HTMLInputElement, IInput> = (
   {

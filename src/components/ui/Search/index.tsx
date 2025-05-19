@@ -1,17 +1,17 @@
-import ReactAsyncSelect from '../ReactAsyncSelect';
-import * as Style from './styles';
-import { IconButton } from '../Buttons/IconButton';
+import { BrApi } from '@services/brApi';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BrApi } from '@services/brApi';
 import { icons } from 'src/assets/icons';
+import { IconButton } from '../Buttons/IconButton';
+import ReactAsyncSelect from '../ReactAsyncSelect';
+import * as Style from './styles';
 
 export const Search = ({ iconPosition = 'right' }: ISearch) => {
   const navigate = useNavigate();
   const [isOpenSearch, setIsOpenSearch] = useState(false);
 
   async function requestStocks(search?: string) {
-    let options: { value: string; label: string; icon: string }[] = [];
+    const options: { value: string; label: string; icon: string }[] = [];
     await BrApi.get(`/quote/list?search=${search}&limit=10&token=hXAyiiQ3NhNz1Kp1ciC6pu`).then(
       ({ data }) => {
         data.stocks.forEach(({ stock, logo }: IStocks) => {

@@ -1,13 +1,13 @@
 // UI
+import { theme } from '@styles/theme';
 import { IconButton } from '@ui/Buttons/IconButton';
+import { MouseEvent } from 'react';
+import { icons } from 'src/assets/icons';
 import * as Style from './styles';
 // ICONS
 
 // TYPES
 import { IModal } from './types';
-import { MouseEvent } from 'react';
-import { icons } from 'src/assets/icons';
-import { theme } from '@styles/theme';
 
 export const Modal = ({ children, setModal, title }: IModal) => (
   <Style.Background

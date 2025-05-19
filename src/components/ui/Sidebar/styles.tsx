@@ -1,5 +1,5 @@
-import { css, styled } from 'styled-components';
 import { theme } from '@styles/theme';
+import { css, styled } from 'styled-components';
 
 export const SidebarContainer = styled.aside<{ $isOpen: boolean }>`
   width: 0;

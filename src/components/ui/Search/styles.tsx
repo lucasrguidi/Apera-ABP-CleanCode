@@ -1,6 +1,6 @@
-import { css, styled } from 'styled-components';
 import { theme } from '@styles/theme';
 import { StylesConfig } from 'react-select';
+import { css, styled } from 'styled-components';
 
 export const SearchContainer = styled.div<{ $iconPosition: string }>`
   display: flex;

@@ -1,11 +1,11 @@
+import { DotLoading } from '@ui/DotLoading';
 import { useContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
-import { Api } from '../services/api';
 import { toast } from 'react-toastify';
-import { IUser } from './types';
+import { Api } from '../services/api';
+import { AuthContext } from './AuthContext';
 import { LoadingContainer } from './styles';
-import { DotLoading } from '@ui/DotLoading';
+import { IUser } from './types';
 
 export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const navigate = useNavigate();
@@ -43,6 +43,7 @@ export const RequireAuth = ({ children }: { children: JSX.Element }) => {
       return navigate('/login');
 
     validateToken();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   return loading ? (

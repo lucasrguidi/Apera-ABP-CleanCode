@@ -1,6 +1,6 @@
-import ReactApexChart from 'react-apexcharts';
-import { ApexOptions } from 'apexcharts';
 import { theme } from '@styles/theme';
+import { ApexOptions } from 'apexcharts';
+import ReactApexChart from 'react-apexcharts';
 
 interface Props {
   series: { name: string; data: number[][] }[];

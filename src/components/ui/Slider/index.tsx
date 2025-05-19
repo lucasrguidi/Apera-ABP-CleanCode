@@ -1,6 +1,6 @@
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import * as Style from './styles';
-import { motion } from 'framer-motion';
 
 export const Slider = ({ children }: ISlider) => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -9,7 +9,7 @@ export const Slider = ({ children }: ISlider) => {
   useEffect(() => {
     if (sliderRef.current)
       setWidth(sliderRef.current?.scrollWidth - sliderRef.current?.offsetWidth);
-  }, [sliderRef.current]);
+  }, []);
 
   return (
     <Style.SliderContainer>

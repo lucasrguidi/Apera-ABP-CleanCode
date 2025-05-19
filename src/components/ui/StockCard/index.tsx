@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import * as Style from './styles';
-import { useNavigate } from 'react-router-dom';
 import { formatCurrencyBRL } from '@utils/functions';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import * as Style from './styles';
 
 export const StockCard = ({ stockInfos }: IStockCard) => {
   const navigate = useNavigate();

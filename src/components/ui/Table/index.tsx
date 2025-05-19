@@ -1,7 +1,7 @@
+import { theme } from '@styles/theme';
 import { CSSProperties, ReactNode } from 'react';
 import * as Style from './styles';
 import { ITableBody, ITableHeader } from './types';
-import { theme } from '@styles/theme';
 
 export const Table = ({ colsHeader, children }: ITableHeader) => (
   <Style.Background>

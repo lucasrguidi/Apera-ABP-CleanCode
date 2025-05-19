@@ -1,11 +1,11 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import * as Style from './styles';
 import { useContext, useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { icons } from 'src/assets/icons';
+import { AuthContext } from 'src/context/AuthContext';
 import { IconButton } from '../Buttons/IconButton';
 import { Search } from '../Search';
 import { Sidebar } from '../Sidebar';
-import { AuthContext } from 'src/context/AuthContext';
-import { icons } from 'src/assets/icons';
+import * as Style from './styles';
 
 export const Navbar = () => {
   const navigate = useNavigate();
